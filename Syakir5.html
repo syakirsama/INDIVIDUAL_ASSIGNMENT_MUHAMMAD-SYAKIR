@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<head>
+  <body bgcolor="#c90016">
+  <title>GALLERY</title>
+  <link rel="stylesheet" type="text/css" href="Assest/Css/Styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-glitch">
+    <a href="index.html"><img src="Assest/Logo/Syakir_logo.jpg" class="logo"></a>
+<h1>ALLAH CAN CHANGE THE MOST HOPELESS SITUATION INTO THE BEST MOMENT OF YOUR LIFE</h1>
+<div class="container">
+    <div class="gallery">
+      <div class="img-box">
+    <img src="Assest/Image/Syakir9.jpg" alt="Logo" class="float-image">
+</div>
+      </div>
+    </div>
+  </div>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="Syakir2.html">ABOUT ME</a></li>
+      <li><a href="Syakir3.html">EXPERIENCE</a></li>
+      <li><a href="Syakir4.html">HOBBY</a></li>
+      <li><a href="Syakir5.html">GALLERY</a></li>
+    </ul>
+  </nav>
+<hr color="red" size="5">
+<hr color="black" size="10">
+<hr color="red" size="5">
+<marquee direction="right" scrollamount="25"> 
+<h1> GALLERY OF ME AND DA GANG </h1>
+</marquee>
+<h2 style="text-align: center;">MINI SLIDESHOW</h2>
+
+  <div class="container">
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img src="Assest\Image\Gallery1.jpg" style="width: 100%;">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img src="Assest\Image\Gallery2.jpg" style="width: 100%;">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img src="Assest\Image\Gallery3.jpg" style="width: 100%;">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img src="Assest\Image\Gallery4.jpg" style="width: 100%;">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+      <img src="Assest\Image\Gallery5.jpg" style="width: 100%;">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+      <img src="Assest\Image\Gallery6.jpg" style="width: 100%;">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+<div class="row">
+  <div class="column">
+    <img class="demo cursor" src="Assest\Image\Gallery1.jpg" style="width: 100%;" onclick="currentSlide(1)" alt="The Clique">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="Assest\Image\Gallery2.jpg" style="width: 100%;" onclick="currentSlide(2)" alt="From Da Hood">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="Assest\Image\Gallery3.jpg" style="width: 100%;" onclick="currentSlide(3)" alt="The Clique">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="Assest\Image\Gallery4.jpg" style="width: 100%;" onclick="currentSlide(4)" alt="From Da Hood">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="Assest\Image\Gallery5.jpg" style="width: 100%;" onclick="currentSlide(5)" alt="The Clique">
+  </div>    
+  <div class="column">
+    <img class="demo cursor" src="Assest\Image\Gallery6.jpg" style="width: 100%;" onclick="currentSlide(6)" alt="From Da Hood">
+  </div>
+</div>
+ </div>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+  </script>
+<marquee scrollamount="20">
+<h2>DA HOOD</h2>
+</marquee>
+<center>
+<video controls autoplay muted>
+<source src="Assest\Video/Syakir2.mp4" type="video/mp4">
+</video>
+<br><br><br><br>
+<marquee scrollamount="20">
+<h2>DA HOOD 2</h2>
+</marquee>
+<center>
+<video controls autoplay muted>
+<source src="Assest\Video/Syakir3.mp4" type="video/mp4">
+</video>
+<br><br><br><br>
+<marquee scrollamount="20">
+<h2>DA HOOD 3</h2>
+</marquee>
+<center>
+<video controls>
+<source src="Assest\Video/Syakir4.mp4" type="video/mp4">
+</video>
+<!--- INSERTING AUDIO --->
+<hr color="red">
+<hr color="red">
+<!-- Footer -->
+  <footer class="footer-glitch">
+<p> CONTACT ME THROUGH </p>
+    <ul class="social-icons">
+      <li><a href="https://www.instagram.com/syki_48run/"><img src="Assest\Logo\Ig.png" alt="Instagram"></a></li>
+      <li><a href="https://www.facebook.com/syakir.macho.33"><img src="Assest\Logo\Facebook.png" alt="Facebook"></a></li>
+      <li><a href="https://twitter.com/yuusha_sama11"><img src="Assest\Logo\Twitter.png" alt="WhatsApp"></a></li>
+    </ul>
+    <p>&copy; 2023 Created by Syakir. All rights reserved.</p>
+  </footer>
+</body>
+</html>
